@@ -1,0 +1,477 @@
+
+/* CSS General */
+:root {
+    --color1: #2f364c;
+    --color2: #514a6b;
+    --color3: #8a6888;
+    --color4: #d092b4;
+    --color5: #e5bad4;
+    --color6: #f7e6f0;
+    --color7: #f9f9f9;
+
+    /* Darker Shades */
+    --color1-dark: #23283b;
+    --color2-dark: #403553;
+    --color3-dark: #6d546f;
+    --color4-dark: #aa7490;
+    --color5-dark: #b993aa;
+    --color6-dark: #d8c3d5;
+    --color7-dark: #eaeaea;
+
+    /* Lighter Shades */
+    --color1-light: #3f455e;
+    --color2-light: #675a7b;
+    --color3-light: #a5819a;
+    --color4-light: #e3a9c5;
+    --color5-light: #f0d3e2;
+    --color6-light: #fbeff5;
+    --color7-light: #ffffff;
+
+    /* Colores adicionales */
+    --red: #b85464; /* Rojo apagado */
+    --red-hover: #a24353; /* Rojo para hover */
+
+    --green: #6a946c; /* Verde apagado */
+    --green-hover: #58805a; /* Verde para hover */
+
+    --yellow: #c9b175; /* Amarillo apagado */
+    --yellow-hover: #b29f65; /* Amarillo para hover */
+
+    --orange: #d08d64; /* Anaranjado apagado */
+    --orange-hover: #b8794d; /* Anaranjado para hover */
+
+    --toastify-icon-color-success: var(--color3); /* Toastify icon color */
+}
+
+
+html {
+    font-size: 14px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--color2);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--color1);
+}
+
+
+/* Filtros */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px ;
+    padding: 5px;
+    gap: 10px;
+}
+
+.filters input, .filters button, .filters select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color3);
+    background-color: var(--color2);
+    color: white;
+    font-size: 1em;
+    width: 48%; /* Se ajusta a la mitad del contenedor */    
+}
+
+.filters input {
+    width: 100%; /* Ajusta el tamaño de búsqueda */
+}
+
+.filters select {
+    width: 25%; /* Ajusta el tamaño del selector */
+}
+
+.filters button {
+    background-color: var(--color3);
+    width: 25%; /* Ajusta el tamaño del selector */
+}
+
+.filters button:hover {
+    background-color: var(--color4);
+}
+
+.filters .fav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Favoritos */
+.favoritos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Tarjetas con tamaño mínimo de 250px */
+    gap: 16px;
+    padding: 16px;
+}
+
+.favorito {
+    border: 1px solid var(--color3);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    background-color: var(--color2);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center;
+
+}
+
+.favorito img {    
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    width: 100%;
+    height: 175px; /* Ajusta la altura máxima de las imágenes */    
+    border-radius: 6px;
+    margin-bottom: 4px;
+    object-fit: cover; /* Asegura que la imagen llene el espacio */
+    background-color: var(--color1); /* Fondo para rellenar */
+    border-radius: 6px;
+}
+
+.favorito h2 {
+    font-size: 1em;
+    margin: 5px 0;
+    color: var(--color6);
+        
+    line-height: 1.2;
+    height: calc(1.22em * 2);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    text-overflow: ellipsis;
+}
+
+.favorito p {
+    font-size: 0.85em;
+    color: var(--color5);
+    line-height: 1.2;
+    height: calc(1.23em * 2);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    text-overflow: ellipsis;
+}
+
+.favorito:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Paginacion */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: var(--color2);
+    color: var(--color5);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.pagination button:hover {
+    background-color: var(--color3);
+    transform: scale(1.05);
+}
+
+.pagination button:disabled {
+    background-color: var(--color4);
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    background-color: var(--color5);
+    color: var(--color1);
+    font-weight: bold;
+}
+
+.pagination .dots {
+    color: var(--color5);
+    font-size: 0.9em;
+    margin: 0 5px;
+}
+
+/* Estilos para el botón de eliminar */
+.delete-btn, .success-btn, .delete-btn-fav {
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 3%;
+    transition: transform 0.2s, background-color 0.3s;    
+    font-size: 1em;
+}
+
+.delete-btn, .delete-btn-fav { 
+    background-color: var(--red); 
+}
+.success-btn {
+    background-color: var(--color1-dark); 
+}
+
+.delete-btn:hover, .success-btn:hover, .delete-btn-fav:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn:hover, .delete-btn-fav:hover {
+    background-color: var(--red-hover); 
+}
+.success-btn:hover {
+    background-color: var(--color3); 
+}
+
+.delete-btn:focus, .success-btn:focus, .delete-btn-fav:focus {
+    outline: none;
+}
+
+.delete-btn-fav{
+    border-radius: 10%;
+}
+
+.exp-icon {
+    display: none;
+}
+
+.exp-span {
+    display: flex;
+    font-size: 0.95em !important;
+    color: #f9f9f9 !important;
+}
+
+.fav-icon {
+    border-radius: 3%;
+}
+
+.logo {    
+    max-width: 150px;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Personalizar el toast */
+.Toastify__progress-bar {
+    background-color: var(--color3) !important;
+}
+
+.Toastify__progress-bar--success{
+    background-color: var(--color2) !important;
+}
+
+.toast-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.toast-confirm-btn,
+.toast-cancel-btn {
+    padding: 8px 12px;
+    border: none;
+    background-color: var(--color3); /* Usa tu variable CSS */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.toast-confirm-btn:hover {
+    background-color: var(--color4);
+}
+
+.toast-cancel-btn:hover {
+    background-color: var(--color2);
+}
+
+.toast-custom {
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    padding: 6px 12px; /* Menos espacio interno */
+    margin: 4px; /* Reduce el margen entre alertas */
+    border-radius: 4px; /* Opcional: bordes más sutiles */
+    min-height: auto; /* Permite alturas dinámicas */
+    width: 105%; /* Ajusta el ancho en móviles */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra discreta */
+}
+
+
+/* Estilos base para el select con la clase específica */
+.category-select {
+    width: 25%; /* Asegura que se ajuste al contenedor */    
+    margin: 0 10px;
+}
+
+/* Select de generos */
+.p-multiselect, .p-dropdown{
+    border-color: var(--color3) !important; /* Borde al enfocar */
+}
+
+.p-multiselect:focus-within, .p-dropdown:focus-within{
+    border-color: var(--color4) !important; /* Borde al enfocar */
+    box-shadow: 0 0 5px var(--color4) !important; /* Sombra al enfocar */
+}
+
+.p-multiselect-clear-icon{
+    right: 33px !important;
+}
+
+.multiselect-exp .p-multiselect-header .p-link{
+    display: none;
+}
+
+.multiselect-fav .p-multiselect-header{
+    display: none;
+}
+
+.p-dropdown-clear-icon{
+    display: none;
+}
+
+/* Contenedor para el select y el botón */
+.status-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    text-align: left;
+    margin: 0px;
+}
+
+/* Estilos para el select */
+.status-dropdown{
+    width: 100%; /* Puedes ajustarlo según tu necesidad */
+    margin: 0px;
+    margin-right: 5px;
+}
+
+.status-dropdown .p-dropdown-label{
+    font-size: small;
+}
+.status-dropdown .p-dropdown-trigger{
+    width: 25px;
+    margin-right: 5px;
+}
+
+
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {    
+
+    .favoritos {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .favorito {
+        flex-direction: row; /* Alinea la imagen y el contenido en una fila */
+        gap: 10px; /* Espaciado entre la imagen y el texto */
+        padding: 4px;
+        text-align: left;
+    }
+    
+    .favorito img {
+        flex-shrink: 0; /* Evita que la imagen se encoja */
+        width: 120px; /* Tamaño fijo */
+        height: 150px; /* Tamaño fijo */
+        object-fit: cover; /* Asegura que la imagen llene el espacio */
+        background-color: var(--color1); /* Fondo para rellenar */
+        border-radius: 6px;
+    }
+    
+    .favorito-contenido {
+        flex: 1; /* Hace que el contenido ocupe el resto del espacio */
+    }
+
+    .favorito h2 {
+        font-size: 1.1em;
+        margin: 4px 0;
+    }
+
+    .favorito p {
+        font-size: 0.9em;
+    }
+    
+    .delete-btn, .success-btn{
+        border-radius: 3%;
+        margin: 10px;
+    }
+
+    .delete-btn-fav{
+        margin-right: 5px;
+    }
+
+    .toast-custom {
+        font-size: 0.8rem;
+        width: 95%; /* Asegúrate de que no ocupe mucho espacio */
+        padding: 4px 10px ; /* Aún más compacto en móviles */
+        margin-top: 1rem !important;
+        margin-right: 0.7rem;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+        
+    .p-multiselect-trigger, .p-dropdown-trigger {
+        display: none;
+    }
+
+    .filter-exp{
+        margin-bottom: -2px;
+    }
+
+    .p-hidden-accessible input{
+        margin: 0;
+    }
+
+    /* Estilos para el select */
+    .status-container {
+        justify-content: flex-end;
+    }
+    
+    .status-dropdown{
+        width: 100%; /* Puedes ajustarlo según tu necesidad */
+        margin-right: 10px;
+    }
+
+    .status-dropdown .p-dropdown-label{
+        font-size: 1rem;
+    }
+
+    .status-dropdown .p-dropdown-trigger{
+        display: inline-block;
+        margin-top: 0.8rem;
+    }
+    
+}
+

@@ -1,0 +1,232 @@
+
+/* CSS General */
+:root {
+    --color1: #2f364c;
+    --color2: #514a6b;
+    --color3: #8a6888;
+    --color4: #d092b4;
+    --color5: #e5bad4;
+    --color6: #f7e6f0;
+    --color7: #f9f9f9;
+
+    /* Darker Shades */
+    --color1-dark: #23283b;
+    --color2-dark: #403553;
+    --color3-dark: #6d546f;
+    --color4-dark: #aa7490;
+    --color5-dark: #b993aa;
+    --color6-dark: #d8c3d5;
+    --color7-dark: #eaeaea;
+
+    /* Lighter Shades */
+    --color1-light: #3f455e;
+    --color2-light: #675a7b;
+    --color3-light: #a5819a;
+    --color4-light: #e3a9c5;
+    --color5-light: #f0d3e2;
+    --color6-light: #fbeff5;
+    --color7-light: #ffffff;
+
+    /* Colores adicionales */
+    --red: #b85464; /* Rojo apagado */
+    --red-hover: #a24353; /* Rojo para hover */
+
+    --green: #6a946c; /* Verde apagado */
+    --green-hover: #58805a; /* Verde para hover */
+
+    --yellow: #c9b175; /* Amarillo apagado */
+    --yellow-hover: #b29f65; /* Amarillo para hover */
+
+    --orange: #d08d64; /* Anaranjado apagado */
+    --orange-hover: #b8794d; /* Anaranjado para hover */
+
+    --toastify-icon-color-success: var(--color3); /* Toastify icon color */
+}
+
+
+.col-1{
+    width: 20%;
+}
+
+.col-2 {
+    width: 75%;
+}
+
+.detail-container {
+    background-color: var(--color2);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 0.5%;    
+    display: flex;
+    gap: 30px;
+}
+
+
+.detail-container h1 {
+    font-size: 1.75rem;
+    margin: 0px;
+    margin-bottom: 20px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    text-overflow: ellipsis;
+}
+
+.detail-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 1%;
+}
+
+.detail-container p{
+    color: var(--color5-light);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 2; 
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.detail-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-container ul li {
+    margin-bottom: 10px;
+}
+
+.detail-container ul li button {
+    background-color: var(--color4-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.detail-container ul li button:hover {
+    background-color: var(--color3-light);
+}
+
+.detail-container .server-buttons {
+    margin-top: 20px;
+}
+
+.detail-container .server-buttons button {
+    background-color: var(--color4-dark);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.detail-container .server-buttons button:hover {
+    background-color: var(--color3-light);
+}
+
+.episodios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.episodios h2{
+    margin: 5px;
+}
+
+
+
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--red);
+}
+
+.error-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-container button:hover {
+    background-color: var(--red);
+}
+
+
+.content-iframe{
+    position: relative; 
+    width: 100%; 
+    padding-top: 56.25%;
+    margin-right: 15px;
+    margin-bottom: 15px;    
+}
+
+.content-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  75%;
+    height: 75%;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+
+    background-color: black; /* Fondo negro por defecto */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+/* Estilos para el overlay de carga */
+.iframe-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  75%;
+    height: 75%;
+    background-color: black; /* Fondo negro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Asegura que esté por encima del iframe */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para el spinner */
+.iframe-spinner {
+    text-align: center;
+}
+
+/* Estilos para el mensaje de "no episodios" */
+.no-episodes {
+    color: var(--color5-light);
+    font-size: 1.2rem;
+}

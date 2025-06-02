@@ -1,0 +1,9 @@
+:root {
+    --webkit-tap-highlight-color: transparent !important;
+}
+
+*, *::before, *::after {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+

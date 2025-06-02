@@ -1,0 +1,231 @@
+
+/* CSS General */
+:root {
+    --color1: #2f364c;
+    --color2: #514a6b;
+    --color3: #8a6888;
+    --color4: #d092b4;
+    --color5: #e5bad4;
+}
+
+html {
+    font-size: 14px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--color2);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--color1);
+}
+
+/* Estilos para el formulario de login */
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: var(--color1);
+}
+
+.register-container {
+    min-height: 90vh;
+}
+
+.login-form {
+    background: var(--color2);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    color: white;
+    font-size: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color3);
+    border-radius: 4px;
+    background-color: var(--color1);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color4);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--color3);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--color4);
+}
+
+.register-link {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: var(--color4);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+.logo {    
+    max-width: 150px;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.error-message {
+    color: var(--color4);
+    font-size: 1.1rem;
+    text-align: center; /* Centra el mensaje */
+}
+
+.password-input-container {
+    position: relative;
+  }
+  
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-45%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+  
+
+/* Pantallas más pequeñas que 1024px (tablets en orientación horizontal) */
+@media (max-width: 1024px) {
+    .login-form {
+        padding: 1.5rem;
+        max-width: 80%; /* El formulario ocupa el 80% del ancho */
+    }
+
+    .login-form h2 {
+        font-size: 1.25rem; /* Ajusta el tamaño del texto */
+    }
+
+    .btn {
+        font-size: 0.875rem;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+}
+
+/* Pantallas más pequeñas que 768px (tablets en orientación vertical y móviles grandes) */
+@media (max-width: 768px) {
+    html {
+        font-size: 12px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .login-container, .register-container {
+        padding: 1rem; /* Reduce el padding del contenedor */
+    }
+
+    .login-form {
+        padding: 1.5rem;
+        max-width: 90%; /* El formulario ocupa el 90% del ancho */
+    }
+
+    .login-form h2 {
+        font-size: 1.25rem; /* Ajusta el tamaño de la cabecera */
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .register-link a {
+        font-size: 0.875rem; /* Reduce el tamaño de texto en el enlace */
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+}
+
+/* Pantallas más pequeñas que 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    html {
+        font-size: 10px; /* Ajuste de fuente más pequeña */
+    }
+
+    .login-container, .register-container {
+        padding: 0.5rem;
+    }
+
+    .login-form {
+        padding: 1rem;
+        max-width: 95%; /* El formulario ocupa el 95% del ancho */
+    }
+
+    .login-form h2 {
+        font-size: 1.125rem; /* Ajusta el tamaño de la cabecera */
+    }
+
+    .btn {
+        font-size: 0.875rem; /* Reducir el tamaño del texto en el botón */
+        padding: 0.75rem; /* Hacer los botones más fáciles de pulsar */
+    }
+
+    .register-link a {
+        font-size: 0.75rem; /* Reduce el tamaño del texto en el enlace de registro */
+    }
+
+    .logo {
+        max-width: 80px; /* Reducción adicional en el tamaño de la logo */
+    }
+}
