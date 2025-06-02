@@ -6,15 +6,11 @@ import { AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
 import "../assets/styles/navbar.css";
 
 const Navbar = () => {
-
     const { user, logout, profileImage } = useContext(UserContext);
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
     const [pageTitle, setPageTitle] = useState("");
-
-    
-    const PROFILE_DEFAULT = process.env.REACT_APP_PROFILE_DEFAULT;
 
     useEffect(() => {
         // Establecer el título de la página basado en la ruta actual
@@ -50,7 +46,7 @@ const Navbar = () => {
             <nav className="navbar">
                 <div className="navbar-left">
                     <Link to="/Explorer" className="navbar-logo-link" onClick={(e) => handleReload("/Explorer", e)}>
-                        <img src={PROFILE_DEFAULT} alt="Logo" className="navbar-logo" />
+                        <img src="/favicon.png" alt="Logo" className="navbar-logo" />
                     </Link>
                     <Link to="/Explorer" className="navbar-title-link" onClick={(e) => handleReload("/Explorer", e)}>
                         <span className="navbar-title">Otaku Collection</span>
@@ -107,11 +103,13 @@ const Navbar = () => {
                         src={
                             profileImage ||
                             user?.profile_image ||
-                            PROFILE_DEFAULT
+                            process.env.PROFILE_DEFAULT
                         }
                         alt="Perfil"
                         className="profile-image navbar-logo"
-                        onError={(e) => (e.target.src = PROFILE_DEFAULT) }
+                        onError={(e) =>
+                            (e.target.src = process.env.PROFILE_DEFAULT)
+                        }
                     />
                     <span>Perfil</span> {/* Texto siempre visible */}
                 </Link>

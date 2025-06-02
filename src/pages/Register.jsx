@@ -9,7 +9,6 @@ import { BiShowAlt } from "react-icons/bi";
 const Register = () => {
 
   const API = process.env.REACT_APP_BACKEND_URL;
-  const PROFILE_DEFAULT = process.env.REACT_APP_PROFILE_DEFAULT;
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loading, setLoading] = useState(false);
@@ -53,7 +52,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
-        <img src={PROFILE_DEFAULT} alt="Logo" className="logo" />
+        <img src="/favicon.png" alt="Logo" className="logo" />
         <h2>Crear Cuenta</h2>
         
         <div className="form-group">

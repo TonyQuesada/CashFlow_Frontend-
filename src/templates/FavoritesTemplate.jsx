@@ -6,7 +6,6 @@ import { Dropdown } from 'primereact/dropdown';
 import 'react-toastify/dist/ReactToastify.css';
 import '../assets/styles/style.css';
 import { HiSwitchHorizontal } from "react-icons/hi";
-import { Link } from 'react-router-dom';
 
 const FavoritesTemplate = ({
     statuses,
@@ -95,12 +94,7 @@ const FavoritesTemplate = ({
                     <div className="favorito" key={favorito.anime_id}>
                         {favorito.image_url && <img src={favorito.image_url} alt={favorito.title} />}
 
-                        <div className="favorito-contenido">     
-                                                   
-                            <h2>
-                                <Link to={`/detail/${favorito.anime_id}`}>{favorito.title}</Link>
-                            </h2>
-
+                        <div className="favorito-contenido">
                             <h2>{favorito.title}</h2>
                             <p>{favorito.description}</p>
 

@@ -10,7 +10,6 @@ import { BiShowAlt } from "react-icons/bi";
 const Login = () => {
 
   const API = process.env.REACT_APP_BACKEND_URL;
-  const PROFILE_DEFAULT = process.env.REACT_APP_PROFILE_DEFAULT;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -70,7 +69,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <img src={PROFILE_DEFAULT} alt="Logo" className="logo" />
+        <img src="/favicon.png" alt="Logo" className="logo" />
         <h2>Iniciar Sesión</h2>
           <div className="form-group">
             <label htmlFor="username">Username:</label>

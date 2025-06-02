@@ -48,7 +48,7 @@ const ExplorerTemplate = ({
                     value={search}
                     onChange={handleSearchChange}
                     onKeyDown={(e) => e.key === 'Enter' && handleSearchClick()}
-                    placeholder={`Buscar ${typeShow !== "" ? typeShow : "anime"}...`}
+                    placeholder="Buscar animes..."
                     className="search-input"
                 />
 

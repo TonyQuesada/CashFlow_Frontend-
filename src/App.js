@@ -6,7 +6,6 @@ import Favorites from "./pages/Favorites";
 import Explorer from "./pages/Explorer";
 import Profile from "./pages/Profile";
 import Navbar from "./pages/Navbar";
-import AnimeMangaDetail from './pages/AnimeMangaDetail';
 import useIsMobile from "./hooks/useIsMobile";
 import { ToastContainer } from 'react-toastify';
 import { UserContext } from "./context/UserContext";
@@ -36,8 +35,7 @@ function App() {
             <Route path="/Register" element={ <Register /> } />
             <Route path="/Favorites" element={ <ProtectedRoute> <Favorites /> </ProtectedRoute> } />          
             <Route path="/Explorer" element={ <ProtectedRoute> <Explorer /> </ProtectedRoute> } />
-            <Route path="/Profile" element={ <ProtectedRoute> <Profile /> </ProtectedRoute> } />
-            <Route path="/Detail/:id" element={ <ProtectedRoute> <AnimeMangaDetail /> </ProtectedRoute> } />
+            <Route path="/Profile" element={ <ProtectedRoute> <Profile /> </ProtectedRoute> } />          
           </Routes>
         </PrimeReactProvider>
       </BrowserRouter>

@@ -8,9 +8,7 @@ import ExplorerTemplate from '../templates/ExplorerTemplate';
 const Explorer = () => {
 
     const { user, logout } = useContext(UserContext);
-
     const API = process.env.REACT_APP_BACKEND_URL;
-    const API_JIKAN = process.env.REACT_APP_API_JIKAN;
 
     const [animeList, setAnimeList] = useState([]);
     const [favorites, setFavorites] = useState([]);
@@ -101,7 +99,7 @@ const Explorer = () => {
         setAnimeList([]);
 
         try {
-            let baseUrl = API_JIKAN;
+            let baseUrl = 'https://api.jikan.moe/v4';
             const queryParams = new URLSearchParams({
                 page: page,
                 limit: 25,
@@ -110,7 +108,7 @@ const Explorer = () => {
             
             if(typeShow === "anime" || typeShow === ""){
 
-                // queryParams.append('order_by', 'scored_by');
+                queryParams.append('order_by', 'scored_by');
                 // queryParams.append('min_episodes', 1);
 
                 if (search.length === 0 && selectedCategories.length === 0) {
@@ -216,7 +214,7 @@ const Explorer = () => {
 
     const handleStatusChangeFavorite = async (anime_id) => {
         try {
-            const response = await fetch(`${API_JIKAN}/${typeShow === "manga" ? typeShow : "anime"}/${anime_id}`);
+            const response = await fetch(`https://api.jikan.moe/v4/${typeShow === "manga" ? typeShow : "anime"}/${anime_id}`);
             const animeDetails = await response.json();
 
             if (!animeDetails || !animeDetails.data) {
